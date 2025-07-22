@@ -1,15 +1,20 @@
-# Local Bus - Chattogram
-![Version](https://img.shields.io/badge/Version%201.0-063970)
-![Personal Project](https://img.shields.io/badge/Personal%20Project-8A2BE2)
-![Local Bus Finder](https://img.shields.io/badge/Local%20Bus%20Finder-276749)
+<div align="center">
+  
+  # Local Bus - Chattogram
+  
+  ![Version](https://img.shields.io/badge/Version%201.0-063970)
+  ![Personal Project](https://img.shields.io/badge/Personal%20Project-8A2BE2)
+  ![Local Bus Finder](https://img.shields.io/badge/Local%20Bus%20Finder-276749)
 
-⭐ Star on GitHub if you like — it motivates me a lot!
+  ⭐ Star on GitHub if you like — it motivates me a lot!
+  
+</div>
 
-The other day, I was working on some tasks. Then suddenly I noticed something. Almost every city has a system where users can find details about local buses and their routes. But for my city, Chattogram (previously Chittagong), there is nothing like this. 
+<br>
+
+The other day, I was working on some tasks. Then suddenly I noticed something. Almost every city has a system where users can find details about local buses and their routes. But for my city, Chattogram (previously Chittagong), there is nothing like this. So, I thought of making one by myself, in which user can search for local buses available for their destination and possible fare amount. And there it is.
 
 <img src="assets/readmeThumbnail.png" alt="thumbnail"/>
-
-So, I thought of making one by myself, in which user can search for local bus available for their destination and possible fare amount. And there it is. 
 
 ## Technical details
 ![HTML5](https://img.shields.io/badge/-HTML5-%23E44D27?style=flat-square&logo=html5&logoColor=ffffff)
