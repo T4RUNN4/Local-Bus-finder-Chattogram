@@ -1,0 +1,35 @@
+body {
+  font-family: "Noto Sans Bengali", sans-serif;
+  scroll-behavior: smooth;
+  background-color: #f3f4f6;
+}
+
+.result-box, .human-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .main-container {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-6xl {
+    font-size: 2.5rem !important;
+  }
+  .w-16.h-16 {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+  .w-20.h-20 {
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+}

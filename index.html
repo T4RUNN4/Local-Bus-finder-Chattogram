@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang='bn-BD'>
+    
+    <head>
+            
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+        <script src="assets/fareCharts.js"></script>
+        <script src="assets/translations.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="script.js"></script>
+
+        <link rel='stylesheet' href='style.css'>
+        <link rel="icon" href="assets/favicon.ico" type="image/png" alt="Soure: CityPNG">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&family=Tiro+Bangla:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+        
+        <title>
+            Local Bus Finder - Chittagong
+        </title>
+            
+    </head>
+            
+    <body class="flex flex-col min-h-screen bg-white">
+        
+        <header class="w-full bg-gray-100 text-white py-3">
+            
+            <div class="flex justify-between items-center contaianer px-2 sm:px-4">
+
+                <a href="index.html" class="flex items-center space-x-2">
+                    
+                    <img src="assets/logo.png" alt="Logo" class="w-10 h-10 rounded-full">
+                    
+                </a>
+
+                <div class="flex space-x-4">
+                    
+                    <button id="languageToggle" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition duration-300 flex items-center space-x-2">
+                        <!-- En -->
+                    </button>
+
+                    <a href="https://forms.gle/mHAxeMa5GhV3dm5D6" target="_blank" rel="noopener noreferrer" id="info" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition duration-300 flex items-center space-x-2">
+                        ভুল তথ্য
+                    </a>
+
+                </div>
+
+            </div>
+        </header>
+
+
+
+        <hr class="w-full border-gray-300 my-full">
+
+        <main class="flex-grow flex items-center justify-center py-4 px-2 sm:py-10 sm:px-4">
+            
+            <div id="introduction" class="w-full max-w-4xl mx-auto main-container rounded-xl sm:rounded-2xl p-4 sm:p-8 space-y-6 sm:space-y-8 text-gray-800">
+                
+                <div class="text-center">
+                    
+                    <h1 id="mainHeading" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-green-800">
+                        <!-- লোকাল বাস - চট্টগ্রাম -->
+                    </h1>
+                    
+                    <p id="subHeading" class="text-gray-600 mt-2 text-base sm:text-lg">
+                        <!-- চট্টগ্রাম শহরের অভ্যন্তরে যেকোন স্থানে যাওয়ার লোকাল বাস ও ভাড়ার পরিমাণ বের করুন। -->
+                    </p>
+                    
+                    <p id="warning" class="text-red-500 text-sm mt-1 italic">
+                        <!-- ⚠️ সকল তথ্য বিআরটিএর অফিশিয়াল পাবলিকেশন এবং যাত্রীদের থেকে সংগ্রহ করা। ভুল তথ্যের ব্যাপারে নিচে দেওয়া ফরমের মাধ্যমে জানান। -->
+                    </p>
+
+                </div>
+
+                <br>
+
+                <div id='search' class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+                    
+                    <div class="space-y-2">
+                        
+                        <label id="start" for="startingPoint" class="text-lg font-medium text-gray-700">
+                            <!-- আপনি কোথা থেকে উঠবেন? -->
+                        </label>
+                        
+                        <input oninput="suggestion('startingPoint')" required autocomplete="off" autofocus type="text" id="startingPoint" placeholder="যাত্রা শুরুর স্থান....." class="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-green-500/50 transition duration-300 text-gray-900"/>
+                    
+                    </div>
+                    
+                    <div class="space-y-2">
+                        
+                        <label id="dest" for="destination" class="text-lg font-medium text-gray-700">
+                            <!-- আপনি কোথায় যাবেন? -->
+                        </label>
+                        
+                        <input oninput="suggestion('destination')" required autocomplete="off" type="text" id="destination" placeholder="গন্তব্যস্থল...." class="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-green-500/50 transition duration-300 text-gray-900"/>
+
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-4">
+                    
+                    <button id="searchButton" onclick="findRoute()" class="w-full bg-green-600 text-white font-bold py-3 sm:py-4 px-4 rounded-lg hover:bg-green-700 active:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-500/50 transition duration-300 transform hover:scale-105 text-lg sm:text-xl">
+                        <!-- সার্চ করুন -->
+                    </button>
+
+                </div>
+
+                <div class="hidden w-full text-red-500 text-center mt-4" id="error-message">
+                
+                    <p id="message" class="text-lg">
+                        
+                    </p>
+
+                </div>
+
+                <div id="result-container" class="hidden pt-4 space-y-10">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                        
+                        <div class="result-box bg-green-50 border-2 border-green-200">
+                            
+                            <h3 id="rootHeading" class="text-xl font-bold text-black mb-3">
+                                <!-- রুট নম্বর -->
+                            </h3>
+
+                            <p id="root" class="text-lg text-black">
+                                <span id="root-number" class="font-bold text-2xl text-green-600">
+                                    
+                                </span> <br>
+                                <span id="rootSubheading">
+                                    <!-- নম্বরের বাসে করে আপনি যেতে পারবেন। -->
+                                </span>
+                            </p>
+
+                        </div>
+                        
+                        <div class="result-box bg-green-50 border-2 border-green-200">
+                            
+                            <h3 id="fareHeading" class="text-xl font-bold text-black mb-3">
+                                <!--ভাড়ার পরিমাণ -->
+                            </h3>
+
+                            <p id="fair" class="text-lg text-black">
+                                <span id="fair-amonut" class="font-bold text-2xl text-green-600">
+                                    
+                                </span> <br> 
+                                <span id="fareSubheading">
+                                    <!-- টাকা (আনুমানিক)। -->
+                                </span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <hr class="w-full border-gray-300 my-full">
+
+        <footer class="w-full bg-gray-200 text-white text-center py-4">
+            
+            <div class="max-w-4xl mx-auto px-4">
+                
+                <div class="flex justify-center items-center space-x-4">
+                    
+                    <a href="https://www.facebook.com/tarunna.002" target="_blank" rel="noopener noreferrer" id="dev" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition duration-300 flex items-center space-x-2">
+                        <!-- ডেভেলপারের সাথে যোগাযোগ করুন -->
+                    </a>
+
+                </div>
+                
+                <p class="text-xs mt-3 opacity-50 text-black">
+                    © 2025 Developed by Tarunna | All rights reserved
+                </p>
+
+            </div>
+
+        </footer>
+            
+    </body>
+            
+</html>
