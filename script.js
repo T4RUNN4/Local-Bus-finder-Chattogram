@@ -1,3 +1,121 @@
+function addBanglaNames(obj) {
+    
+	const nameMap = {
+		'Karnaphuli Bridge': 'কর্ণফুলী ব্রিজ',
+		'Rajakhali': 'রাজাখালী',
+		'Kalamia Bazar': 'কালামিয়া বাজার',
+		'Nahar CNG': 'নাহার সিএনজি',
+		'Ek Kilometer': 'এক কিলোমিটার',
+		'Bahaddarhat': 'বহদ্দারহাট',
+		'Kapasgola': 'কাপাসগোলা',
+		'Chawkbazar': 'চকবাজার',
+		'Sirajuddaula Road': 'সিরাজউদ্দৌলা রোড',
+		'Andarkilla': 'আন্দরকিল্লা',
+		'Laldighi': 'লালদীঘি',
+		'New Market': 'নিউ মার্কেট',
+		'Kalurghat Bridge': 'কালুরঘাট ব্রিজ',
+		'Ispahani Masjid': 'ইস্পাহানী মসজিদ',
+		'Kaptai Rastar Matha': 'কাপ্তাই রাস্তার মাথা',
+		'C&B Rastar Matha': 'সিএন্ডবি রাস্তার মাথা',
+		'Sharafat Petrol Pump': 'শরাফত পেট্রোল পাম্প',
+		'Bus Terminal': 'বাস টার্মিনাল',
+		'Bahaddarhat Police Box': 'বহদ্দারহাট পুলিশ বক্স',
+		'Muradpur': 'মুরাদপুর',
+		'Sholoshohor 2no Gate': 'ষোলশহর ২নং গেট',
+		'Chattogram Medical': 'চট্টগ্রাম মেডিকেল',
+		'Chawkbazar (Masjid)': 'চকবাজার (মসজিদ)',
+		'Jamalkhan Road': 'জামালখান রোড',
+		'Laldighi Jail Gate': 'লালদীঘি জেল গেট',
+		'Tin Poler Matha': 'তিন পোলের মাথা',
+		'Enayet Bazar': 'এনায়েত বাজার',
+		'Kotwali Mor': 'কোতয়ালী মোড়',
+		'Bouddho Mondir': 'বৌদ্ধ মন্দির',
+		'Kazir Deuri': 'কাজীর দেউড়ি',
+		'WASA': 'ওয়াসা',
+		'Hamzarbag': 'হামজারবাগ',
+		'Oxygen': 'অক্সিজেন',
+		'Baluchara': 'বালুছরা',
+		'Nondir Hat': 'নন্দীরহাট',
+		'Fateyabad': 'ফতেয়াবাদ',
+		'Puraton Station': 'পুরাতন স্টেশন',
+		'Tiger Pass': 'টাইগার পাস',
+		'WASA Mor': 'ওয়াসা মোড়',
+		'Garibullah Shah Mazar': 'গরীবউল্লাহ শাহ মাজার',
+		'Wireless Colony': 'ওয়্যারলেস কলোনি',
+		'USTC': 'ইউএসটিসি',
+		'AK Khan': 'এ কে খান',
+		'Colonel Hat': 'কর্নেল হাট',
+		'City Gate': 'সিটি গেট',
+		'Fakir Hat Over Bridge': 'ফকিরহাট ওভার ব্রিজ',
+		'Fouzdarhat': 'ফৌজদারহাট',
+		'Banur Bazar': 'বানুর বাজার',
+		'BM Gate': 'বিএম গেট',
+		'Bhatiary': 'ভাটিয়ারী',
+		'Madarbari': 'মাদারবাড়ি',
+		'Choumuhoni': 'চৌমুহনী',
+		'Badamtali': 'বাদামতলী',
+		'Barik Building': 'বারিক বিল্ডিং',
+		'Fakir Hat': 'ফকিরহাট',
+		'Nimtola Bridge': 'নিমতলা ব্রিজ',
+		'Salt Gola': 'সল্টগোলা',
+		'EPZ': 'ইপিজেড',
+		'Bandar Tila': 'বন্দর টিলা',
+		'Cement Crossing': 'সিমেন্ট ক্রসিং',
+		'Floatilla': 'ফ্লোটিলা',
+		'Standard Asiatic Oil': 'স্ট্যান্ডার্ড এশিয়াটিক অয়েল',
+		'Drydock': 'ড্রাইডক',
+		'Koylar Dipu': 'কয়লার ডিপু',
+		'Airport': 'এয়ারপোর্ট',
+		'Zilla Police Line': 'জেলা পুলিশ লাইন',
+		'Rajmukut': 'রাজমুকুট',
+		'WAPDA Gate': 'ওয়াপদা গেট',
+		'Noyabazar': 'নয়াবাজার',
+		'Alonkar': 'অলংকার',
+		'Fakir Hat Bridge': 'ফকিরহাট ব্রিজ',
+		'Kadamtali': 'কদমতলী',
+		'Ruby Gate': 'রুবি গেট',
+		'Shershah Colony': 'শেরশাহ কলোনি',
+		'Bayezid': 'বায়েজিদ',
+		'Kalurghat': 'কালুরঘাট',
+		'Sholoshohor Rail Station': 'ষোলশহর রেল স্টেশন',
+		'GEC': 'জিইসি',
+		'Ispahani Mor': 'ইস্পাহানী মোড়',
+		'Dewan Hat': 'দেওয়ানহাট',
+		'Bandar Post Office': 'বন্দর পোস্ট অফিস',
+		'Customs Bridge': 'কাস্টমস ব্রিজ',
+		'Salt Gola Crossing': 'সল্টগোলা ক্রসিং',
+		'CEPZ': 'সিইপিজেড',
+		'Katgor Refinery Colony Gate': 'কাটগর রিফাইনারি কলোনি গেট',
+		'Sea Beach': 'সি-বিচ',
+		'BM Gate': 'বিএম গেট',
+		'Steel Mill': 'স্টিল মিল',
+		'Katgor': 'কাটগর',
+		'Custom Mor': 'কাস্টম মোড়',
+		'Boro Pol': 'বড় পোল',
+		'Nimtola': 'নিমতলা',
+	};
+	const newObj = {};
+    
+	for (const key in obj) {
+        
+		let newKey = key;
+		newKey = newKey.replace(/\s*[\]\[]/g, '').trim();
+        
+        if (nameMap[newKey] && !newKey.includes(' - ')) {
+            newKey = `${newKey} - ${nameMap[newKey]}`;
+        }
+        if (typeof obj[key] === 'object' && obj[key] !== null) {
+            newObj[newKey] = addBanglaNames(obj[key]);
+        } else {
+            newObj[newKey] = obj[key];
+        }
+    }
+    return newObj;
+}
+
+const updatedFareCharts = addBanglaNames(fareCharts);
+fareCharts = updatedFareCharts;
+
 const allLocations = new Set();
 	
 for (const route of Object.values(fareCharts)) {
