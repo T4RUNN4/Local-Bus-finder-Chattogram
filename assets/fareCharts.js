@@ -1,4 +1,4 @@
-const fareCharts = {
+let fareCharts = {
 	'01': {
 		'Karnaphuli Bridge': {
 			'Rajakhali': 8,
