@@ -24,13 +24,13 @@ The other day, I was working on some tasks. Then suddenly I noticed something. A
 
 Well, for this website, these tech stacks are used. The goal of this website was to keep it minimal and user-friendly and not overly complicated. 
 
-All the information on Bus Route and Fare amount is collected from the Government Website of "Chatto-Metro," published in 2022. 
+All the information on the bus route and Fare amount is collected from the Government Website of "Chatto-Metro," published in 2022. 
 
 ## Features
 
 This website focuses on functionality rather than features. So, this website has a very minimal amount of features.
 
-- <b> Route and Fair Finder </b>: This is the core functionality of the website where users can input their location and destination point and find the available buses with a possible fare amount. 
+- <b> Route and Fair Finder </b>: This is the core functionality of the website, where users can input their location and destination point and find the available buses with a possible fare amount. 
 
 <img src="assets/core.png" alt="thumbnail"/>
 <br>
@@ -45,7 +45,7 @@ This website focuses on functionality rather than features. So, this website has
 ## Run Locally
 
 Clone the project<br>
-<code>git clone https://github.com/T4RUNN4/Chattogram-Polytechnic-Institute-Bus.git</code><br><br>
+<code>git clone https://github.com/T4RUNN4/Local-Bus-finder-Chattogram.git</code><br><br>
 Install Dependencies<br>
 <code>npm install</code><br><br>
 Run the project<br>
