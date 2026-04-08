@@ -38,16 +38,29 @@ This website focuses on functionality rather than features. So, this website has
 - <b> Multilingual Support </b>: Although this website is made for people in Bangladesh, there is also English language support for non-Bangladeshi people so that everybody can use it. 
 - <b> Data Improvement </b>: Since the source of data is a little bit backdated now, users can report wrong data via Google Form.
 
-## Developers Note
+## Dependencies
 
-If you are a User and using this website for finding Bus routes, then don't blindly depend on website and do a cross-check. 
+<code>tailwindcss</code>
+
+## Run Locally
+
+Clone the project<br>
+<code>git clone https://github.com/T4RUNN4/Chattogram-Polytechnic-Institute-Bus.git</code><br><br>
+Install Dependencies<br>
+<code>npm install</code><br><br>
+Run the project<br>
+<code>npm run dev</code><br><br>
+
+## Live Link
+Browse the project from here: <a href="https://local-bus-finder-chattogram.vercel.app">https://local-bus-finder-chattogram.vercel.app</a>
+
+## Developer's Note
+If you are a User and using this website for finding Bus routes, then don't blindly depend on the website and do a cross-check. 
 
 If you are a fellow Bangladeshi Developer and want to add a version of your own city, you can contact me directly on <a href="https://www.facebook.com/tarunna.002" target ="_blank"> Facebook </a>.
 
 ## Contributors
-
 These are the people who helped make this website better.
-
 - <a href="https://www.facebook.com/mahfux090" target="_blank"> Mohammad Mahfuz Uddin </a>: Helped sorting and Organizing the Government Data.
 
 <br>
